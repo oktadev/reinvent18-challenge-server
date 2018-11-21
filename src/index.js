@@ -20,6 +20,7 @@ Winner.sync({ force: true });
 
 router.post("/", async ctx => {
   ctx.body = ctx.request.body;
+  console.log(ctx.body);
 });
 
 app
