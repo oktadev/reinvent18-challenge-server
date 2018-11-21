@@ -46,6 +46,7 @@ router.post("/", async ctx => {
       from: "reinvent18-challenge@okta.com",
       subject: "New Challenge Winner: " + json.email,
       text: "A new person has completed the challenge! Please give a prize to " + json.email + " when they come to the booth."
+      html: "A new person has completed the challenge! Please give a prize to " + json.email + " when they come to the booth."
     });
   }
 
