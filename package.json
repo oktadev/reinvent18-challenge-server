@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/oktadeveloper/reinvent18-challenge-server/issues"
   },
-  "homepage": "https://github.com/oktadeveloper/reinvent18-challenge-server#readme"
+  "homepage": "https://github.com/oktadeveloper/reinvent18-challenge-server#readme",
+  "dependencies": {
+    "koa": "^2.6.2"
+  }
 }
