@@ -55,7 +55,7 @@ router.post("/", async ctx => {
 });
 
 app
-  .use(cors())
+  .use(cors({ origin: true }))
   .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods());
