@@ -4,6 +4,7 @@ const Koa = require("koa");
 const Router = require("koa-router");
 const Sequelize = require("sequelize");
 const bodyParser = require("koa-bodyparser");
+const sendgrid = require("sendgrid");
 
 const app = new Koa();
 const router = new Router();
@@ -11,6 +12,7 @@ const router = new Router();
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   operatorAliases: false
 });
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 const Winner = sequelize.define("winner", {
   email: {
@@ -35,7 +37,7 @@ router.post("/", async ctx => {
   }
 
   let winner = await Winner.findOrCreate({ where: { email: json.email }});
-  console.log(winner);
+  console.log(winner.isNewRecord);
 
   ctx.status = 201;
   ctx.body = "";
