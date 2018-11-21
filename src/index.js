@@ -36,10 +36,16 @@ router.post("/", async ctx => {
     return;
   }
 
-  let winner = await Winner.findOrCreate({ where: { email: json.email }});
-  console.log(winner.isNewRecord);
-  console.log(winner[0]);
-  console.log(winner[1]);
+  const winner = await Winner.findOrCreate({ where: { email: json.email }});
+  const created = winner[1];
+
+  if (created) {
+    sendgrid.send({
+      to: "randall.degges@okta.com",
+      from: "reinvent18-challenge@okta.com"
+      subject: "New Challenge Winner: " + json.email,
+    });
+  }
 
   ctx.status = 201;
   ctx.body = "";
