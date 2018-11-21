@@ -3,6 +3,7 @@
 const Koa = require("koa");
 const Router = require("koa-router");
 const Sequelize = require("sequelize");
+const cors = require("@koa/cors");
 const bodyParser = require("koa-bodyparser");
 const sendgrid = require("@sendgrid/mail");
 
@@ -54,6 +55,7 @@ router.post("/", async ctx => {
 });
 
 app
+  .use(cors())
   .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods());
