@@ -39,7 +39,6 @@ router.post("/", async ctx => {
   const winner = await Winner.findOrCreate({ where: { email: json.email }});
   const created = winner[1];
 
-  console.log('debug:', created);
   if (created) {
     sendgrid.send({
       to: "r@rdegges.com",
