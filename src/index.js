@@ -17,7 +17,7 @@ const Winner = sequelize.define("winner", {
 
 Winner.sync({ force: true });
 
-router.post("/", ctx => {
+router.post("/", async ctx => {
   ctx.body = "hello, world";
 });
 
