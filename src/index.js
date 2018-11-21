@@ -13,7 +13,20 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 });
 
 const Winner = sequelize.define("winner", {
-  email: { type: Sequelize.TEXT }
+  email: {
+    type: Sequelize.TEXT,
+    validate: {
+      isEmail: true,
+      notNull: true,
+      notEmpty: true
+    }
+  },
+  indexes: [
+    {
+      unique: true,
+      fields: ["email"]
+    }
+  ]
 });
 
 Winner.sync({ force: true });
