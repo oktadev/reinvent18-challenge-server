@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "The re:Invent challenge API for Okta.",
   "main": "./src/index.js",
+  "engines": {
+    "node": "10.11.0"
+  },
   "scripts": {
     "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
