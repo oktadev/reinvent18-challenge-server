@@ -56,6 +56,10 @@ router.post("/", async ctx => {
 
 app
   .use(cors({ origin: "*" }))
+  .use(async (ctx, next) => {
+    ctx.set("Access-Control-Allow-Origin", "*");
+    await next();
+  })
   .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods());
