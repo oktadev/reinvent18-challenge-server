@@ -27,6 +27,9 @@ router.post("/", async ctx => {
     return;
   }
 
+  let winner = await Winner.findOrCreate({ where: { email: json.email }});
+  console.log(winner);
+
   ctx.status = 201;
   ctx.body = "";
 });
