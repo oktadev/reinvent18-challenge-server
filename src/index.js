@@ -38,6 +38,8 @@ router.post("/", async ctx => {
 
   let winner = await Winner.findOrCreate({ where: { email: json.email }});
   console.log(winner.isNewRecord);
+  console.log(winner[0]);
+  console.log(winner[1]);
 
   ctx.status = 201;
   ctx.body = "";
