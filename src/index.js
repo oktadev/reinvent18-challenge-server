@@ -19,14 +19,9 @@ const Winner = sequelize.define("winner", {
       isEmail: true,
       notNull: true,
       notEmpty: true
-    }
-  },
-  indexes: [
-    {
-      unique: true,
-      fields: ["email"]
-    }
-  ]
+    },
+    unique: true
+  }
 });
 
 Winner.sync({ force: true });
