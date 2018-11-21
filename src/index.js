@@ -19,8 +19,13 @@ const Winner = sequelize.define("winner", {
 Winner.sync({ force: true });
 
 router.post("/", async ctx => {
-  ctx.body = ctx.request.body;
-  console.log(ctx.body);
+  const json = ctx.request.body;
+
+  if (!(json && json.email)) {
+    ctx.throw(400, "email required");
+  }
+
+  ctx.status = 201;
 });
 
 app
