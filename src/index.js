@@ -55,7 +55,11 @@ router.post("/", async ctx => {
 });
 
 app
-  .use(cors({ origin: "*" }))
+  .use(cors({
+    origin: "*",
+    exposeHeaders: true,
+    allowHeaders: true
+  }))
   .use(bodyParser())
   .use(router.routes())
   .use(router.allowedMethods());
