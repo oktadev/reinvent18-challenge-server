@@ -22,7 +22,9 @@ router.post("/", async ctx => {
   const json = ctx.request.body;
 
   if (!(json && json.email)) {
-    ctx.throw(400, { error: "email required" });
+    ctx.status = 400;
+    ctx.body = { error: "email required" };
+    return;
   }
 
   ctx.status = 201;
