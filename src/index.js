@@ -4,7 +4,7 @@ const Koa = require("koa");
 const Router = require("koa-router");
 const Sequelize = require("sequelize");
 const bodyParser = require("koa-bodyparser");
-const sendgrid = require("sendgrid");
+const sendgrid = require("@sendgrid/mail");
 
 const app = new Koa();
 const router = new Router();
