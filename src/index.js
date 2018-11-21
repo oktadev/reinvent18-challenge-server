@@ -41,8 +41,8 @@ router.post("/", async ctx => {
 
   if (created) {
     sendgrid.send({
-      to: "r@rdegges.com",
-      from: "r@rdegges.com",
+      to: process.env.TO_EMAIL,
+      from: process.env.FROM_EMAIL,
       subject: "New Challenge Winner: " + json.email,
       text: "A new person has completed the challenge! Please give a prize to " + json.email + " when they come to the booth.",
       html: "A new person has completed the challenge! Please give a prize to " + json.email + " when they come to the booth."
