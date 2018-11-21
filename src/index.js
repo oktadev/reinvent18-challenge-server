@@ -43,7 +43,7 @@ router.post("/", async ctx => {
   if (created) {
     sendgrid.send({
       to: "r@rdegges.com",
-      from: "reinvent18-challenge@okta.com",
+      from: "r@rdegges.com",
       subject: "New Challenge Winner: " + json.email,
       text: "A new person has completed the challenge! Please give a prize to " + json.email + " when they come to the booth.",
       html: "A new person has completed the challenge! Please give a prize to " + json.email + " when they come to the booth."
