@@ -17,7 +17,7 @@ const Winner = sequelize.define("winner", {
     type: Sequelize.TEXT,
     validate: {
       isEmail: true,
-      notNull: true,
+      allowNull: false,
       notEmpty: true
     },
     unique: true
