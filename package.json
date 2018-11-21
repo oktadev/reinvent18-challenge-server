@@ -1,0 +1,19 @@
+{
+  "name": "reinvent18-challenge-server",
+  "version": "1.0.0",
+  "description": "The re:Invent challenge API for Okta.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oktadeveloper/reinvent18-challenge-server.git"
+  },
+  "author": "Randall Degges",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/oktadeveloper/reinvent18-challenge-server/issues"
+  },
+  "homepage": "https://github.com/oktadeveloper/reinvent18-challenge-server#readme"
+}
