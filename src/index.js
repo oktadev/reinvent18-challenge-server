@@ -25,7 +25,7 @@ router.post("/", async ctx => {
     ctx.throw(400, "email required");
   }
 
-  ctx.status = 201;
+  ctx.throw(201);
 });
 
 app
